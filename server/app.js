@@ -7,9 +7,14 @@ import guideRoutes from './routes/guideRoutes.js';
 import requestRoutes from './routes/requestRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
-
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
+dotenv.config();
 const app = express();
 
+
+// Connect to MongoDB
+connectDB();
 // Enable Cross-Origin Resource Sharing (CORS) so React client can communicate with API
 app.use(
   cors({
