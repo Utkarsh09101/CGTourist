@@ -16,11 +16,8 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 // Enable Cross-Origin Resource Sharing (CORS) so React client can communicate with API
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
-    credentials: true,
-  })
+app.use( 
+  cors()
 );
 
 // Body parser middleware to handle JSON and URL-encoded request bodies
